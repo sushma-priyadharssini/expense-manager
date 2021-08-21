@@ -1,0 +1,28 @@
+.new-expense-card {
+    margin: 30px 0px !important;
+}
+
+.expense-controls {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.expense-control > input {
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    display: inline-flex;
+}
+
+.expense-control > * {
+    display: block;
+}
+
+.new-expense-card button {
+    float: right;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px; 
+}

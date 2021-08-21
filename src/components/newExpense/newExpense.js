@@ -5,7 +5,7 @@ import Card from '../ui/card';
 const NewExpense = (props) => {
     const [ userInput, setUserInput ] = useState({
         title: '',
-        amount: '',
+        amount: 0.00,
         date: ''
     });
 
@@ -21,7 +21,8 @@ const NewExpense = (props) => {
         });
     };
 
-    const addNewExpenseHandler = () => {
+    const addNewExpenseHandler = (event) => {
+        event.preventDefault();
         props.addNewExpenseHandler({
             ...userInput,
             id: Math.random(0, 100).toString()
@@ -45,7 +46,7 @@ const NewExpense = (props) => {
                     </div>
                     <div className="expense-control">
                         <label>Amount</label>
-                        <input type="text" value={userInput.amount} onChange={inputChangeHandler.bind(this, 'amount')} />
+                        <input type="number" value={userInput.amount} onChange={inputChangeHandler.bind(this, 'amount')} />
                     </div>
                     <div className="expense-control">
                         <label>Date</label>

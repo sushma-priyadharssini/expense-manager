@@ -6,7 +6,7 @@ import ExpenseFilter from '../expenses/expenseFilter'
 
 const Expenses = (props) => {
     const yearsData = [...new Set(props.data.map(expense => expense.date.getFullYear()))];
-    const [filteredYear, serFilteredYear] = useState(Math.max(...yearsData));
+    const [filteredYear, serFilteredYear] = useState(Math.max(...yearsData)); //TODO: need to update whenever props(data) changes
 
     const onFilterChangeHandler = (selectedYear) => {
         serFilteredYear(selectedYear);

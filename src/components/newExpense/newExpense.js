@@ -6,12 +6,14 @@ const NewExpense = (props) => {
     const [ userInput, setUserInput ] = useState({
         title: '',
         amount: 0.00,
-        date: ''
+        date: new Date()
     });
 
     const inputChangeHandler = (inputField, event) => {
         const obj = {};
-        obj[inputField] = event.target.value;
+        const inputValue = event.target.value;
+        const value = inputField === 'date' ? new Date(inputValue) : inputValue;
+        obj[inputField] = value;
 
         setUserInput((prevState) => {
             return {
@@ -31,7 +33,7 @@ const NewExpense = (props) => {
             return {
                 title: '',
                 amount: '',
-                date: ''
+                date: new Date()
             }
         });
     }

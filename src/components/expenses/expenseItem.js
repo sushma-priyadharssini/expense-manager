@@ -7,7 +7,7 @@ export const ExpenseItem = (props) => {
         <div className="expense-item">
             <DateCard date={data.date}/>
             <div className="expense-title">{data.title}</div>
-            <div className="expense-amount">{data.amount}</div>
+            <div className="expense-amount">{`₹${data.amount}`}</div>
         </div>
     )
 }

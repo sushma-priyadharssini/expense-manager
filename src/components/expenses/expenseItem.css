@@ -1,0 +1,28 @@
+.expense-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    margin: 30px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: grey;
+    box-shadow: 0 4px 8px 0 rgba(196, 184, 184, 0.2);
+}
+
+.expense-item .expense-title {
+    font-weight: bold;
+    font-size: large;
+}
+
+.expense-item .expense-amount {
+    border: 1px solid rgb(240, 235, 245);
+    border-radius: 5px;
+    background-color: rgb(45, 2, 85);
+    height: 40px;
+    min-width: 100px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}

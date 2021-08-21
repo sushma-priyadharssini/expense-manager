@@ -17,8 +17,8 @@
 }
 
 .expense-item .expense-amount {
-    border: 1px solid rgb(240, 235, 245);
-    border-radius: 5px;
+    border: 1px solid black;
+    border-radius: 8px;
     background-color: rgb(45, 2, 85);
     height: 40px;
     min-width: 100px;

@@ -24,7 +24,7 @@ const NewExpense = (props) => {
     const addNewExpenseHandler = () => {
         props.addNewExpenseHandler({
             ...userInput,
-            id: Math.random(0, 100)
+            id: Math.random(0, 100).toString()
         });
         setUserInput(() => {
             return {

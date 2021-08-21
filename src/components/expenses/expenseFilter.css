@@ -1,0 +1,10 @@
+.expense-filter {
+    margin: 30px;
+}
+
+.expense-filter select {
+    float: right;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+}

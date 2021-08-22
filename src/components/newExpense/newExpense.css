@@ -21,10 +21,14 @@
 }
 
 .new-expense-card button {
-    float: right;
+    text-align: center;
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
     color: white;
     background-color: cadetblue;
+}
+
+.new-expense-card form button {
+    float: right;
 }

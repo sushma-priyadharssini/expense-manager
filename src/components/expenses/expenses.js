@@ -3,10 +3,12 @@ import './expenses.css';
 import ExpenseItem from './expenseItem';
 import Card from '../ui/card';
 import ExpenseFilter from '../expenses/expenseFilter'
+import ExpenseChart from './expenseChart';
 
 const Expenses = (props) => {
+    console.log('fn re-executes');
     const yearsData = [...new Set(props.data.map(expense => expense.date.getFullYear()))];
-    const [filteredYear, setFilteredYear] = useState(Math.max(...yearsData).toString()); //TODO: need to update whenever props(data) changes
+    const [filteredYear, setFilteredYear] = useState(Math.max(...yearsData).toString());
 
     const onFilterChangeHandler = (selectedYear) => {
         setFilteredYear(selectedYear);
@@ -19,6 +21,7 @@ const Expenses = (props) => {
     return (
         <Card className="expenses">
             <ExpenseFilter data={[...yearsData, 'All years']} selectedFilter={filteredYear} onFilterChange={onFilterChangeHandler}/>
+            <ExpenseChart expenses={filteredExpenses} />
             {filteredExpenses.map(expense => {
                 return (<ExpenseItem key={expense.id} data={expense}></ExpenseItem>);
             })}

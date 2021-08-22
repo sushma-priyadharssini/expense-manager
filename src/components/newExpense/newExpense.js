@@ -6,7 +6,7 @@ const NewExpense = (props) => {
     const [ userInput, setUserInput ] = useState({
         title: '',
         amount: 0.00,
-        date: new Date()
+        date: ''
     });
     const [showAddForm, setShowAddForm] = useState(false);
 
@@ -17,8 +17,7 @@ const NewExpense = (props) => {
     const inputChangeHandler = (inputField, event) => {
         const obj = {};
         const inputValue = event.target.value;
-        const value = inputField === 'date' ? new Date(inputValue) : inputValue;
-        obj[inputField] = value;
+        obj[inputField] = inputValue;
 
         setUserInput((prevState) => {
             return {
@@ -32,13 +31,14 @@ const NewExpense = (props) => {
         event.preventDefault();
         props.addNewExpenseHandler({
             ...userInput,
-            id: Math.random(0, 100).toString()
+            id: Math.random(0, 100).toString(),
+            date: new Date(userInput.date)
         });
         setUserInput(() => {
             return {
                 title: '',
-                amount: '',
-                date: new Date()
+                amount: 0.00,
+                date: ''
             }
         });
     }
@@ -67,7 +67,6 @@ const NewExpense = (props) => {
                     <button onClick={showAddFormHandler}>Add New Expense</button>
                 )
             }
-            {/* <button onClick={showAddFormHandler}>Add New Expense</button> */}
         </Card>
     )
 }
